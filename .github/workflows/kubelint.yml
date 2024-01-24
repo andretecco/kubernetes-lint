@@ -14,7 +14,7 @@ jobs:
         uses: stackrox/kube-linter-action@v1
         with:
           directory: k8s-yml
-          config: config.yaml
+#          config: config.yaml
 #      - name: Notify discord
 #        uses: th0th/notify-discord@v0.4.1
 #        if: ${{ always() }}
