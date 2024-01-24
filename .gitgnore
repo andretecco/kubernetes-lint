@@ -1,0 +1,10 @@
+.gitignore
+*.retry
+*.log
+*.py
+.DS_Store
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*

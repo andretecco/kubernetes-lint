@@ -1,0 +1,25 @@
+name: kube-lint
+on:
+  push:
+    branches: ["*"]
+  pull_request:
+    branches: ["*"]
+jobs:
+  build:
+    name: K8s Lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Scan yamls
+        id: kube-lint-scan
+        uses: stackrox/kube-linter-action@v1
+        with:
+          directory: k8s-yml
+          config: .kube-linter/config.yaml
+#      - name: Notify discord
+#        uses: th0th/notify-discord@v0.4.1
+#        if: ${{ always() }}
+#        env:
+#          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_LINT }}
+#          GITHUB_ACTOR: ${{ github.actor }}
+#          GITHUB_JOB_NAME: ${{ github.event.repository.name }}
+#          GITHUB_JOB_STATUS: ${{ job.status }}
